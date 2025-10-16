@@ -24,7 +24,6 @@ use local_cohortrole\persistent;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_cohortrole_generator extends component_generator_base {
-
     /**
      * Create new persistent instance
      *

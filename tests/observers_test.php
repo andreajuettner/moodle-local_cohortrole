@@ -29,7 +29,6 @@ use context_system;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 final class observers_test extends advanced_testcase {
-
     /** @var \local_cohortrole\persistent $persistent. */
     protected $persistent;
 

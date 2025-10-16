@@ -19,7 +19,9 @@ namespace local_cohortrole\form;
 defined('MOODLE_INTERNAL') || die();
 
 use local_cohortrole\persistent;
+use stdClass;
 
+global $CFG;
 require_once($CFG->dirroot . '/cohort/lib.php');
 
 /**
@@ -30,14 +32,11 @@ require_once($CFG->dirroot . '/cohort/lib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class edit extends \core\form\persistent {
-
     /** @var string Persistent class name. */
     protected static $persistentclass = persistent::class;
 
     /**
      * Form definition
-     *
-     * @return void
      */
     protected function definition() {
         $mform = $this->_form;
@@ -64,9 +63,12 @@ class edit extends \core\form\persistent {
      * @return array
      */
     public function extra_validation($data, $files, array &$errors) {
-        if ($this->get_persistent()->record_exists_select('cohortid = :cohortid AND roleid = :roleid',
-                ['cohortid' => $data->cohortid, 'roleid' => $data->roleid])) {
+        $exists = $this->get_persistent()->record_exists_select(
+            'cohortid = :cohortid AND roleid = :roleid',
+            ['cohortid' => $data->cohortid, 'roleid' => $data->roleid],
+        );
 
+        if ($exists) {
             $errors['cohortid'] = get_string('errorexists', 'local_cohortrole');
         }
 

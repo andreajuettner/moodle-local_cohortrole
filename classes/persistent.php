@@ -28,7 +28,6 @@ use stdClass;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class persistent extends \core\persistent {
-
     /** Table name for the persistent. */
     const TABLE = 'local_cohortrole';
 

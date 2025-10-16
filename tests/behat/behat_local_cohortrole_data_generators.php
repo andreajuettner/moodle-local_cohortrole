@@ -26,7 +26,6 @@ use Behat\Gherkin\Node\TableNode;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class behat_local_cohortrole_data_generators extends behat_base {
-
     /**
      * Creates specified definitions from given fixtures data
      *

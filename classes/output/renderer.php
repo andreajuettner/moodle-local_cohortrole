@@ -24,7 +24,6 @@ namespace local_cohortrole\output;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class renderer extends \plugin_renderer_base {
-
     /** @var int Page size for displaying summary table. */
     const SUMMARY_TABLE_PAGESIZE = 20;
 

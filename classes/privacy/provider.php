@@ -33,10 +33,9 @@ use local_cohortrole\persistent;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class provider implements
-    \core_privacy\local\metadata\provider,
     \core_privacy\local\request\core_userlist_provider,
+    \core_privacy\local\metadata\provider,
     \core_privacy\local\request\plugin\provider {
-
     /**
      * Returns meta data about this system.
      *
@@ -94,7 +93,6 @@ class provider implements
      * Export all user data for the specified user, in the specified contexts.
      *
      * @param approved_contextlist $contextlist The approved contexts to export information for.
-     * @return void
      */
     public static function export_user_data(approved_contextlist $contextlist) {
         if ($contextlist->count() == 0) {
@@ -122,30 +120,24 @@ class provider implements
     /**
      * Delete all user data in the specified context.
      *
-     * @param context $context
-     * @return void
+     * @param \context $context
      */
     public static function delete_data_for_all_users_in_context(\context $context) {
-
     }
 
     /**
      * Delete multiple users within a single context.
      *
      * @param approved_userlist $userlist The approved context and user information to delete information for.
-     * @return void
      */
     public static function delete_data_for_users(approved_userlist $userlist) {
-
     }
 
     /**
      * Delete all user data for the specified user, in the specified contexts.
      *
      * @param approved_contextlist $contextlist The approved contexts and user information to delete information for.
-     * @return void
      */
     public static function delete_data_for_user(approved_contextlist $contextlist) {
-
     }
 }

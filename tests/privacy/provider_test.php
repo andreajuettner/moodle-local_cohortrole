@@ -32,7 +32,6 @@ use core_privacy\tests\provider_testcase;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 final class provider_test extends provider_testcase {
-
     /** @var stdClass $user. */
     protected $user;
 
@@ -69,7 +68,7 @@ final class provider_test extends provider_testcase {
         $contextlist = provider::get_contexts_for_userid($this->user->id);
         $this->assertCount(1, $contextlist);
 
-        list($context) = $contextlist->get_contexts();
+        [$context] = $contextlist->get_contexts();
 
         $expected = context_system::instance();
         $this->assertSame($expected, $context);

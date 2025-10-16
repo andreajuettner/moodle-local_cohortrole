@@ -28,7 +28,6 @@ use local_cohortrole\persistent;
  * @since Moodle 3.3
  */
 class definition_created extends \core\event\base {
-
     /**
      * Convenience method to instantiate the event
      *

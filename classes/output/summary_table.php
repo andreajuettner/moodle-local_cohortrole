@@ -30,7 +30,6 @@ require_once($CFG->libdir . '/tablelib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class summary_table extends \table_sql implements \renderable {
-
     /**
      * Constructor
      *
@@ -50,7 +49,7 @@ class summary_table extends \table_sql implements \renderable {
 
         // Table configuration.
         $this->set_attribute('cellspacing', '0');
-        $this->set_attribute('class', $this->attributes['class'] .' local-cohortrole-summary-table');
+        $this->set_attribute('class', $this->attributes['class'] . ' local-cohortrole-summary-table');
 
         $this->sortable(true, 'timecreated', SORT_DESC);
         $this->no_sorting('edit');

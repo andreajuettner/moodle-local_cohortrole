@@ -25,8 +25,10 @@
 defined('MOODLE_INTERNAL') || die();
 
 if ($hassiteconfig) {
-    $ADMIN->add('accounts', new admin_externalpage('local_cohortrole',
-            get_string('pluginname', 'local_cohortrole'),
-            new moodle_url('/local/cohortrole/index.php'), 'moodle/role:assign')
-    );
+    $ADMIN->add('accounts', new admin_externalpage(
+        'local_cohortrole',
+        get_string('pluginname', 'local_cohortrole'),
+        new moodle_url('/local/cohortrole/index.php'),
+        'moodle/role:assign',
+    ));
 }

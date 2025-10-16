@@ -44,8 +44,12 @@ if ($delete) {
 
         $persistent->delete();
 
-        redirect($returnurl, get_string('notificationdeleted', 'local_cohortrole'), null,
-            \core\output\notification::NOTIFY_SUCCESS);
+        redirect(
+            $returnurl,
+            get_string('notificationdeleted', 'local_cohortrole'),
+            null,
+            \core\output\notification::NOTIFY_SUCCESS,
+        );
     }
 
     $PAGE->navbar->add(get_string('delete'));
@@ -69,8 +73,12 @@ if ($mform->is_cancelled()) {
 
     local_cohortrole_synchronize($persistent->get('cohortid'), $persistent->get('roleid'));
 
-    redirect($returnurl, get_string('notificationcreated', 'local_cohortrole'), null,
-        \core\output\notification::NOTIFY_SUCCESS);
+    redirect(
+        $returnurl,
+        get_string('notificationcreated', 'local_cohortrole'),
+        null,
+        \core\output\notification::NOTIFY_SUCCESS,
+    );
 }
 
 $PAGE->navbar->add(get_string('add'));
